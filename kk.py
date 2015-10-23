@@ -2,13 +2,15 @@
 # -*- coding:utf-8 -*-
 
 """
-kill me baby - karuta
+kill me baby - karuta v0.0.2
 """
 
 import sys,os
 import time
 import random
 from multiprocessing import Process,Pipe
+
+VERSION="0.0.2"
 
 def timeup(conn,fileno):
 	for i in range(11):
@@ -80,7 +82,7 @@ def kk(combo):
 			return 0
 
 if __name__=='__main__':
-	print "\nKill me Karuta\n"
+	print "\nKill me Karuta v"+VERSION+"\n"
 	time.sleep(1)
 	combo=0
 	while(True):
