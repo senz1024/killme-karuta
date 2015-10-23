@@ -49,13 +49,17 @@ def makeq():
 	return [a,titles[qr[a]][1]]
 
 
-def kk(combo):
+def kk(combo,mode):
 	cor=makeq()
 	p_c,c_c=Pipe()
 	p={}
 	ans=''
-	p[0] = Process(target=timeup,args=(c_c,sys.stdin.fileno()))
-	p[1] = Process(target=getans,args=(c_c,sys.stdin.fileno()))
+	if mode==0:
+		p[0] = Process(target=timeup,args=(c_c,sys.stdin.fileno()))
+		p[1] = Process(target=getans,args=(c_c,sys.stdin.fileno()))
+	elif mode==1:
+		p[0] = Process(target=getans,args=(c_c,sys.stdin.fileno()))
+
 	for i in range(len(p)):
 		p[i].start()
 	while not(ans=='0' or ans=='1' or ans=='2' or ans=='q' or ans=='t'):
@@ -83,8 +87,25 @@ def kk(combo):
 
 if __name__=='__main__':
 	print "\nKill me Karuta v"+VERSION+"\n"
-	time.sleep(1)
-	combo=0
-	while(True):
-		combo=kk(combo)
-		time.sleep(1.5)
+
+	print "SELECT MODE"
+	print "0 : normal"
+	print "1 : practice (no time-up)"
+	print "q : quit"
+	mode=raw_input("mode:")
+	while not mode in ["0","1","q"]:
+		mode=raw_input("mode:")
+
+	print ""
+	if mode=="q":
+		quit()
+	elif mode=="0":
+		combo=0
+		while(True):
+			combo=kk(combo,0)
+			time.sleep(1.5)
+	elif mode=="1":
+		combo=0
+		while(True):
+			combo=kk(combo,1)
+			time.sleep(1.5)
