@@ -62,8 +62,7 @@ def kk(combo,mode):
 
 	for i in range(len(p)):
 		p[i].start()
-	while not(ans=='0' or ans=='1' or ans=='2' or ans=='q' or ans=='t'):
-		ans=p_c.recv()
+	ans=p_c.recv()
 	for i in range(len(p)):
 		p[i].terminate()
 
