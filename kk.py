@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 """
-kill me baby - karuta v0.0.2
+kill me baby - karuta v0.1.0
 """
 
 import sys,os
@@ -88,23 +88,26 @@ if __name__=='__main__':
 	print "\nKill me Karuta v"+VERSION+"\n"
 
 	print "SELECT MODE"
-	print "0 : endless (10sec/question)"
-	print "1 : practice (no time-up)"
+	print "0 : time attack (only 30sec)"
+	print "1 : endless (10sec/question)"
+	print "2 : practice (no time-up)"
 	print "q : quit"
 	mode=raw_input("mode:")
-	while not mode in ["0","1","q"]:
+	while not mode in ["0","1","2","q"]:
 		mode=raw_input("mode:")
 
 	print ""
 	if mode=="q":
 		quit()
-	elif mode=="0":
-		combo=0
-		while(True):
-			combo=kk(combo,0)
-			time.sleep(1)
+	if mode=="0":
+		pass
 	elif mode=="1":
 		combo=0
 		while(True):
 			combo=kk(combo,1)
+			time.sleep(1)
+	elif mode=="2":
+		combo=0
+		while(True):
+			combo=kk(combo,2)
 			time.sleep(1)
