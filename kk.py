@@ -102,9 +102,9 @@ if __name__=='__main__':
 		combo=0
 		while(True):
 			combo=kk(combo,0)
-			time.sleep(1.5)
+			time.sleep(1)
 	elif mode=="1":
 		combo=0
 		while(True):
 			combo=kk(combo,1)
-			time.sleep(1.5)
+			time.sleep(1)
