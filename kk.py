@@ -89,7 +89,7 @@ if __name__=='__main__':
 	print "\nKill me Karuta v"+VERSION+"\n"
 
 	print "SELECT MODE"
-	print "0 : normal"
+	print "0 : normal (10sec/question)"
 	print "1 : practice (no time-up)"
 	print "q : quit"
 	mode=raw_input("mode:")
