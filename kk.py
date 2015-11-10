@@ -10,7 +10,7 @@ import time
 import random
 from multiprocessing import Process,Pipe
 
-VERSION="0.0.2"
+VERSION="0.1.0"
 
 def timeup(conn,fileno):
 	for i in range(11):
